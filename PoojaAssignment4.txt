@@ -1,0 +1,71 @@
+1..WAM which accepts 2 float as arguments perform division & return the output
+class WithNoReturnType{
+	public void displayName() {
+		System.out.println("Division of 2 floating num");
+	}
+	
+	
+	public void division(float x, float y) {
+		float result = x / y;
+		System.out.println("Division: " + result);
+	}
+}
+public class Assignment1 {
+
+	public static void main(String[] args) {
+		WithReturnType Return = new WithReturnType();
+		Return.displayName();
+		
+		Return.division(5, 15);
+	}
+}
+output
+Division of 2 floating num
+Division: 0.33333334
+------------------------------------------------------------------------------------------------------------------------
+2..WAM which accepts array as arrgument & reverse the array
+package method;
+
+import java.util.Arrays;
+
+class Array
+{
+public int[] returnArray(int str[])
+{
+	return str;
+}
+}
+public class Assignment2 {
+
+	public static void main(String[] args) {
+		
+		int arr[] ={7,3,9,0,1,5,7,3,5,2};;
+		//String res2[] = return.returnArray(str);
+		System.out.println(Arrays.toString(arr));
+Arrays.sort(arr);
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i] +" ");
+			
+		}
+		System.out.println();
+		for(int i=arr.length-1;i>=0;i--)
+		{		
+			System.out.print(arr[i]+" ");
+		
+		}
+				System.out.println();
+	
+		
+	
+	}
+
+}
+output
+[7, 3, 9, 0, 1, 5, 7, 3, 5, 2]
+0 1 2 3 3 5 5 7 7 9 
+9 7 7 5 5 3 3 2 1 0 
+
+------------------------------------------------------------------------------------------------------------------------
+3..WAC which accepts 2 int arrays as arguments add both the array & display

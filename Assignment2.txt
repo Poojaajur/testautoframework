@@ -1,0 +1,476 @@
+Q1: Can we create a blank array?
+yes we can create blank array using
+
+    String str[]=new String[0];
+    int arr[]=new int[0];
+    
+    int arr1[]= {};
+    String str1[]= {};
+    
+    int arr2[][]= {};
+    int arr3[][]=new int[0][0];
+----------------------------------------------------------------------------------
+Q2: Assign 1 D array to 2 D array?
+yes we can convert the 1 dimension to 2 dimensional array
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArr2 {
+
+	public static void main(String[] args) {
+		// Assign 1 D array to 2 D array
+		int arr[]= {10,11,12,13,14,15,16,17};
+		System.out.println(Arrays.toString(arr));
+		//Resultant array
+		
+		int arr1[][]=new int[4][2];
+		int x=0;
+		for(int i=0;i<arr1.length;i++)
+		{
+			for(int j=0;j<arr1[i].length;j++)
+			{
+				arr1[i][j]=arr[x];
+				x++;
+				
+			}
+			
+		}
+		System.out.println(Arrays.deepToString(arr1));
+
+	}
+
+}
+output
+[10, 11, 12, 13, 14, 15, 16, 17]
+[[10, 11], [12, 13], [14, 15], [16, 17]]
+
+
+----------------------------------------------------------------------------------
+Q3: Assign 2 D array to 1 D array?
+
+---package array;
+public class AssignmentArray3 {
+
+	// convert 2 dimension into 1 dimensional array 
+		public static void main(String arg[]) 
+		{  
+			int n = 3, m = 3; 
+			int array[]=new int[100];
+			int arr[][] = {{1, 2, 3}, {4, 5, 6},{7, 8, 9}};
+			int i, j, k = 0; 
+			for (i = 0; i < n; i++) 
+			{ 
+				for (j = 0; j < m; j++) 
+				{ 
+					k = i * m + j; 
+					array[k] = arr[i][j]; 
+					k++; 
+				} 
+			} 
+			for (i = 0; i < n; i++) 
+			{ 
+				for (j = 0; j < m; j++) 
+					System.out.print((array[i * m + j])+" "); 
+				System.out.print("\n"); 
+			} 
+		
+		} 
+	}
+
+
+------------------------------------------------------------------------------------------------------------------	-------------------------------------------------------------------------------
+
+Q4: Copy 1 array to another array?
+package array;
+
+public class AssignmentArray4 {
+
+	public static void main(String[] args) {
+		// Copy 1 array to another array
+		int arr[]= new int[]{1,2,3,4,5};
+        int arr1[]= new int[arr.length];
+        for(int i=0;i<arr.length;i++)
+        {
+        	arr1[i]=arr[i];
+        }
+        System.out.println("Elements of original array: ");
+        for(int i=0;i<arr.length;i++)
+        {
+        	System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        System.out.println("Elements of new array: "); 
+        for(int i=0;i<arr1.length;i++)
+        {
+        	System.out.print(arr1[i]+" ");
+        }
+	}
+
+}
+output
+Elements of original array: 
+1 2 3 4 5 
+Elements of new array: 
+1 2 3 4 5 
+----------------------------------------------------------------------------------
+Q5: Sort the array values?
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArray5 {
+
+	public static void main(String[] args) {
+     //Sort the array values
+		int arr[]=new int[] {7,3,9,0,1,5,7,3,5,2};
+		Arrays.sort(arr);
+		System.out.println("Array is sorted");
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i] + " ");
+			
+		}
+	}
+
+}
+output
+Array is sorted
+0 1 2 3 3 5 5 7 7 9
+----------------------------------------------------------------------------------
+Q6: Find the duplicate values in a array?
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArray6 {
+
+	public static void main(String[] args) {
+		// Find the duplicate values in a array
+		 
+		int arr[]=new int[]{7,3,9,0,1,5,7,3,5,2};
+		Arrays.sort(arr);
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+		    {
+			if(arr[i]==arr[j])
+			{
+                                System.out.print("Duplicate values in array elements are:");
+
+				System.out.println(arr[j]+" ");
+
+		}
+		
+		}
+	}
+  }
+}
+output
+3
+5
+7
+----------------------------------------------------------------------------------
+Q7: Reverse the array?
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArray7 {
+
+	public static void main(String[] args) {
+       //Reverse the array
+		int arr[]=new int[] {7,3,9,0,1,5,7,3,5,2};
+		
+		Arrays.sort(arr);
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]);
+			
+		}
+		System.out.println();
+		for(int i=arr.length-1;i>=0;i--)
+		{
+			System.out.print(arr[i]);
+			
+		}
+	}
+}
+output
+0123355779
+9775533210
+----------------------------------------------------------------------------------
+Q8: Find the missing values in a array?
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArray8 {
+
+	public static void main(String[] args) {
+		// Find the missing values in array
+		int arr[]={1,2,4,6,8,10};
+		Arrays.sort(arr);
+		int max=arr[arr.length-1];
+		int index=0;
+		for(int i=0;i<max;i++)
+		{
+		if(i==arr[index])
+		{
+		index++;
+		}
+		else
+		{
+		System.out.println("missing:"+i);
+		}
+
+	}
+	}
+}
+
+output
+missing:0
+missing:3
+missing:5
+missing:7
+missing:9
+
+----------------------------------------------------------------------------------
+Q9: How to compare 2 arrays?
+package array;
+
+public class AssignmentArray9 {
+
+	public static void main(String[] args)
+	{
+// compare 2 arrays
+		int arr[]=new int[]{1,3,2,5};
+		int arr1[]=new int[]{2,3,1,4};
+		int flag=0;
+		if(arr.length==arr1.length)
+		{
+		for(int i=0;i<arr.length;i++)
+		{
+		   if(arr[i]!=arr1[i])
+			{
+			   flag++;
+			   break;
+			}
+		}
+		if(flag==0)
+		System.out.println("both are equal");
+		else
+			System.out.println("both are not equal");
+		}
+		else
+		{
+			System.out.println("both the arrays sizes are not same");
+		}
+    }
+}
+output
+both are not equal
+
+----------------------------------------------------------------------------------
+Q10: Addition of 2 arrays?
+package array;
+
+public class Assignmentarray10 
+{
+
+	public static void main(String[] args)
+	{
+		// Addition of 2 arrays
+		int arr[][]= {{1,2},{3,4}};
+		int arr1[][]= {{3,1},{1,1}};
+		int res[][]=new int[2][2];
+		for(int i=0;i<2;i++)
+		{
+			for(int j=0;j<2;j++)
+			{
+				res[i][j]=arr[i][j]+arr1[i][j];
+			    
+				System.out.print(res[i][j] + " ");
+	
+			}
+			System.out.println();
+		}
+	}
+}
+output
+4 3 
+4 5 
+----------------------------------------------------------------------------------
+Q11: Multiplication of 2 arrays (Matrix multiplication)?
+package array;
+
+public class AssignmentArray11 {
+
+	public static void main(String[] args)
+	{
+		// Multiplication of 2 Array(Matrix multiplication)
+		int arr[][]= {{1,2},{3,1}};
+		int arr1[][]= {{3,4},{1,2}};
+		int res[][]=new int[2][2];
+		for(int i=0;i<2;i++)
+		{
+			for(int j=0;j<2;j++)
+			{
+				res[i][j]=0;
+				for(int k=0;k<2;k++)
+				{
+					res[i][j]+=arr[i][k]*arr1[k][j];
+					System.out.print(res[i][j] + " ");
+				}
+				System.out.println();
+			}
+		}
+	}
+}
+output
+5 3 
+13 7
+----------------------------------------------------------------------------------
+Q12: Is it possible to convert the array to collection?
+yes possible
+----------------------------------------------------------------------------------
+Q13: Can we store values of different datatypes into array?
+Array can be any data type but cant store in single array
+---------------------------------------------------------------------------------
+Q14: Write a programme to find the addition of 2 elements in a array is equal to the given number?
+package array;
+
+public class AssignmentArray14 {
+
+	public static void main(String[] args) {
+		// Write a programme to find the addition of 2 elements 
+		//in a array is equal to the given number?
+		int arr[][]= {{1,2},{3,4}};
+		int arr1[][]= {{3,1},{1,1}};
+		int res[][]=new int[2][2];
+		int com[][]= {{4,3},{4,5}};
+		for(int i=0;i<2;i++)
+		{
+			for(int j=0;j<2;j++)
+			{
+				res[i][j]=arr[i][j]+arr1[i][j];
+			if(res[i][j]==com[i][j])
+				{
+				System.out.println("both are same");
+				}
+			else
+			{
+				System.out.println("both are different");
+			}
+		}
+	}
+ }
+}
+output
+both are same
+----------------------------------------------------------------------------------
+Q15: Print the array without using loops?
+package array;
+
+import java.util.Arrays;
+
+public class AssignmentArray15 {
+
+	public static void main(String[] args) {
+		// Print the array without using loops
+		int[] arr=new int[]{1,9,3,8,5,2};
+		System.out.println(Arrays.toString(arr));
+		
+
+	}
+
+}
+output
+[1, 9, 3, 8, 5, 2]
+
+----------------------------------------------------------------------------------
+Q16. Compare 2 arrays without loops?
+package array;
+
+public class AssignmnetArray16 {
+
+	public static void main(String[] args) {
+		// Compare 2 arrays without loops?
+		int[] arr=new int[] {1,5,3,7};
+		int[] arr1=new int[] {1,5,3,7};
+		if(Arrays.equals(arr,arr1)==true)
+		{
+			System.out.println("both are same");
+			
+		}
+		else
+		{
+			System.out.println("both are diffrenet");
+		}
+	}
+}
+output
+both are same
+
+----------------------------------------------------------------------------------
+Q17. How to find the 2nd largest number from the given array?
+package array;
+//How to find the 2nd largest number from the given array
+public class AssignmentArray17 
+{
+	public static int  Getseclargestnum(int[] arr,int total)
+ {
+	 int temp;
+	 for(int i=0;i<total;i++)
+	 {
+		 for(int j=i+1;j<total;j++)
+		 {
+			 if(arr[i]>arr[j])
+			 {
+				 temp=arr[i];
+				 arr[i]=arr[j];
+				 arr[j]=temp;
+			 }
+		 }
+	 }
+	 return arr[total-2];
+}
+		public static void main(String[] args) {
+		int[] arr=new int[]{1,9,3,8,2};
+		System.out.println("Largest num:" + Getseclargestnum(arr,5));
+	}
+}
+output
+Largest num:8
+----------------------------------------------------------------------------------
+Q18. How to find the 3rd largest number from the given array?
+package array;
+
+public class AssignmentArray18 {
+		public static int  Getseclargestnum(int[] arr,int total)
+	 {
+		 int temp;
+		 for(int i=0;i<total;i++)
+		 {
+			 for(int j=i+1;j<total;j++)
+			 {
+				 if(arr[i]>arr[j])
+				 {
+					 temp=arr[i];
+					 arr[i]=arr[j];
+					 arr[j]=temp;
+				 }
+			 }
+		 }
+		 return arr[total-3];
+	}
+			public static void main(String[] args) {
+			int[] arr=new int[]{1,9,3,8,2};
+			
+			System.out.println("Largest num:" + Getseclargestnum(arr,5));
+		}
+	}
+output
+Largest num:3
+----------------------------------------------------------------------------

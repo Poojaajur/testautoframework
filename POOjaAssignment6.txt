@@ -1,0 +1,478 @@
+Program for Hirarchical Inheretance
+1.. Default Constructor
+package inheritence;
+class ParentA1
+{
+	ParentA1()
+	{
+		System.out.println("PArentA1:default constructor");
+	}
+	static
+	{
+		System.out.println("ParentA1:Static block");
+	}
+	
+}
+class ChildA1 extends ParentA1
+{
+	ChildA1()
+	{
+		System.out.println("ChildA1:default constructor");
+	}
+	static
+	{
+		System.out.println("ChildA1:Static block");
+	}
+	
+}
+class ChildB1 extends ParentA1
+{
+	ChildB1()
+	{
+		System.out.println("ChildB1:default constructor");
+	}
+	static
+	{
+		System.out.println("ChildB1:Static block");
+	}
+	
+}
+public class HI_DefaultConstructor_StaticBlock 
+{
+	public static void main(String[] args) 
+	{
+		ChildA1 ch=new ChildA1();
+		ChildB1 ch1=new ChildB1();
+		
+	}
+
+}
+
+output
+ParentA1:Static block
+ChildA1:Static block
+PArentA1:default constructor
+ChildA1:default constructor
+ChildB1:Static block
+PArentA1:default constructor
+ChildB1:default constructor
+------------------------------------------------------------------------------------------
+2..Parameterized Constructor
+ package inheritence;
+
+class ParentA2
+{
+	ParentA2(String name)
+	{
+		System.out.println("PArentA2:Parameterised String constructor:"+name);
+	}
+	
+}
+class ChildA3 extends ParentA2
+{
+	ChildA3(String name)
+	{
+		super(name);
+		System.out.println("ChildA3:Parameterised String constructor:"+name);
+	}
+	
+}
+class ChildB4 extends ParentA2
+{
+	ChildB4(String name)
+	{
+		super(name);
+		System.out.println("ChildB1:Parameterised String constructor:"+name);
+	}
+	
+}
+	
+public class HI_ParameterizedConstructorInParentClass
+{
+	public static void main(String[] args) {
+
+		ChildA3 ch=new ChildA3("Narendra");
+		ChildB4 ch1=new ChildB4("Modi");
+		
+	}
+
+}
+
+output
+PArentA2:Parameterised String constructor:Narendra
+ChildA3:Parameterised String constructor:Narendra
+PArentA2:Parameterised String constructor:Modi
+ChildB1:Parameterised String constructor:Modi
+
+
+-----------------------------------------------------------------------------------------
+Q:Comstructor Overloading 
+package inheritence;
+class ParentA3
+{
+	ParentA3(String name)
+	{
+	System.out.println("ParentA3: Parameterized constructor Overloading:->"+name);
+    }
+	ParentA3(int age)
+	{
+	System.out.println("ParentA3: Parameterized constructor Overloading:->"+age);
+    }
+	
+
+}
+
+class ChildA5 extends ParentA3
+{
+	ChildA5(String name)
+	{
+		super(name);
+	System.out.println("ChildA5: Parameterized constructor Overloading:->"+name);
+    }
+	ChildA5(int age)
+	{
+		super(age);
+		System.out.println("ChildA5: Parameterized constructor Overloading:->"+age);
+    }
+}
+
+class ChildB5 extends ParentA3
+{
+	ChildB5(String name)
+	{
+		super(name);
+	System.out.println("ChildB5: Parameterized constructor Overloading:->"+name);
+    }
+	
+	ChildB5(int Salary)
+	{
+		super(Salary);
+		System.out.println("ChildB5: Parameterized constructor Overloading:->"+Salary);
+    }
+}
+
+public class HI_ConstructorOverloadingInParentClass
+{
+	public static void main(String[] args)
+	{
+	ChildB5 ch3=new ChildB5("modi");
+	ChildA5 ch4=new ChildA5(73);
+	}
+}
+
+output
+ParentA3: Parameterized constructor Overloading:->modi
+ChildB5: Parameterized constructor Overloading:->modi
+ParentA3: Parameterized constructor Overloading:->73
+ChildA5: Parameterized constructor Overloading:->73
+
+------------------------------------------------------------------------------------------
+Q: Method Overriding
+package inheritence;
+class ParentA4
+{
+	public void DisplayName(String name)
+	{
+		System.out.println("ParentA4: Method Overriding-> NAME is:"+name);
+	}
+	
+}
+class ChildA6 extends ParentA4
+{
+	public void DisplayName(String name)
+	{
+		System.out.println("ChildA6: Method Overriding-> NAME is:"+name);
+	}
+	
+}
+class ChildB6 extends ParentA4
+{
+	public void DisplayName(String name)
+	{
+		System.out.println("ChildB6: Method Overriding-> NAME is:"+name);
+	}
+	
+}
+public class HI_MethodOverriding 
+{
+	public static void main(String[] args)
+	{
+		ChildB6 ch1=new ChildB6();
+		ch1.DisplayName("Abdual");
+		ChildA6 ch2=new ChildA6();
+		ch2.DisplayName("Kalam");
+	}
+
+}
+Output
+ChildB6: Method Overriding-> NAME is:Abdual
+ChildA6: Method Overriding-> NAME is:Kalam
+------------------------------------------------------------------------------------------
+Q:Method Overloading
+package inheritence;
+class ParentA5
+{
+	public void display(String name)
+	{
+		System.out.println("ParentA5: Method Overloading->"+name);
+	}
+}
+class ChildA7 extends ParentA5
+{
+	public void display(String name,int age)
+	{
+		System.out.println("ChildA7: Method Overloading->"+name+" "+age);
+	}
+}
+class ChildB7 extends ParentA5
+{
+	public void display(String name,String place)
+	{
+		System.out.println("ChildB7: Method Overloading->"+name+" "+place);
+	}
+}
+public class HI_MethodOverLoading 
+{
+	public static void main(String[] args) 
+	{
+		ChildB7 ch=new ChildB7();
+		ch.display("Narendra");
+		ChildA7 ch1=new ChildA7();
+		ch1.display("NArendra",73);
+	}
+}
+
+Output 
+ParentA5: Method Overloading->Narendra
+ChildA7: Method Overloading->NArendra 73
+package inheritence;
+class ParentA5
+{
+	public void display(String name)
+	{
+		System.out.println("ParentA5: Method Overloading->"+name);
+	}
+}
+class ChildA7 extends ParentA5
+{
+	public void display(String name,int age)
+	{
+		System.out.println("ChildA7: Method Overloading->"+name+" "+age);
+	}
+}
+class ChildB7 extends ParentA5
+{
+	public void display(String name,String place)
+	{
+		System.out.println("ChildB7: Method Overloading->"+name+" "+place);
+	}
+}
+public class HI_MethodOverLoading 
+{
+	public static void main(String[] args) 
+	{
+		ChildB7 ch=new ChildB7();
+		ch.display("Narendra");
+		ChildA7 ch1=new ChildA7();
+		ch1.display("NArendra",73);
+		
+	}
+
+}
+------------------------------------------------------------------------------------------
+Hybrid Inheritance
+1..Default Constructor
+package inheritence;
+class ParentA6
+{
+	ParentA6()
+	{
+		System.out.println("ParentA6:Default Constructor");
+	}
+	static
+	{
+		System.out.println("ParentA6:Static Block");
+	}
+	
+}
+class ChildA8 extends ParentA6
+{
+	ChildA8()
+	{
+		System.out.println("ChildA8:Default Constructor");
+	}
+	static
+	{
+		System.out.println("ChildA8:Static Block");
+	}
+	
+}
+class ChildB8 extends ChildA8
+{
+	ChildB8()
+	{
+		System.out.println("ChildB8:Default Constructor");
+	}
+	static
+	{
+		System.out.println("ChildB8:Static Block");
+	}
+}
+class ChildC extends ChildA8
+{
+	ChildC()
+	{
+		System.out.println("ChildC:Default Constructor");
+	}
+	static
+	{
+		System.out.println("ChildC:Static Block");
+	}
+	
+}
+public class HybridI_DefaultConstructor_StaticBlock 
+{
+	public static void main(String[] args) 
+	{
+		ChildC ch=new ChildC();
+		ChildB8 ch2=new ChildB8();
+		ChildA8 ch1=new ChildA8();
+	}
+
+}
+
+output
+ParentA6:Static Block
+ChildA8:Static Block
+ChildC:Static Block
+ParentA6:Default Constructor
+ChildA8:Default Constructor
+ChildC:Default Constructor
+ChildB8:Static Block
+ParentA6:Default Constructor
+ChildA8:Default Constructor
+ChildB8:Default Constructor
+ParentA6:Default Constructor
+ChildA8:Default Constructor
+------------------------------------------------------------------------------------------
+2..Parameterised Constructor
+package inheritence;
+
+class ParentA7
+{
+	ParentA7(String name)
+	{
+		System.out.println("ParentA7:Parameterised Constructor:"+name);
+	}
+	
+}
+class ChildA9 extends ParentA7
+{
+	ChildA9(String name)
+	{
+		super(name);
+		System.out.println("ChildA9:Parameterised Constructor:"+name);
+	}
+	
+}
+class ChildB9 extends ChildA9
+{
+	ChildB9(String name)
+	{
+		super(name);
+		System.out.println("ChildB9:Parameterised Constructor:"+name);
+	}
+}
+class ChildC1 extends ChildA9
+{
+	ChildC1(String name)
+	{
+		super(name);
+		System.out.println("ChildC1:Parameterised Constructor:"+name);
+	}
+	
+}
+public class  HybridI_ParameterizedConstructorInParent
+{
+	public static void main(String[] args) 
+	{
+		ChildC1 ch=new ChildC1("Modi");
+		ChildB9 ch2=new ChildB9("Kalam");
+		ChildA9 ch1=new ChildA9("Yogi");
+	}
+
+}
+
+output
+ParentA7:Parameterised Constructor:Modi
+ChildA9:Parameterised Constructor:Modi
+ChildC1:Parameterised Constructor:Modi
+ParentA7:Parameterised Constructor:Kalam
+ChildA9:Parameterised Constructor:Kalam
+ChildB9:Parameterised Constructor:Kalam
+ParentA7:Parameterised Constructor:Yogi
+ChildA9:Parameterised Constructor:Yogi
+
+------------------------------------------------------------------------------------------
+3..Constructor Overloading
+package inheritence;
+
+class AParent1
+{
+	AParent1(String name)
+	{
+		System.out.println("AParent1:Parameterised Constructor:"+name);
+	}
+	
+}
+class AChild1 extends AParent1
+{
+	AChild1(String name)
+	{
+		super(name);
+		System.out.println("AChild1:Parameterised Constructor:"+name);
+	}
+	
+}
+class AChild2 extends AChild1
+{
+	AChild2(String name)
+	{
+		super(name);
+		System.out.println("AChild2:Parameterised Constructor:"+name);
+	}
+}
+class AChild3 extends AChild2
+{
+	AChild3(String name)
+	{
+		super(name);
+		System.out.println("AChild3:Parameterised Constructor:"+name);
+	}
+	
+}
+public class  HybridI_ConstructorOverloadingInParentClass
+{
+	public static void main(String[] args) 
+	{
+		AChild1 ch=new AChild1("Modi");
+		AChild2 ch2=new AChild2("Kalam");
+		AChild3 ch1=new AChild3("Yogi");
+	}
+
+}
+output
+AParent1:Parameterised Constructor:Modi
+AChild1:Parameterised Constructor:Modi
+AParent1:Parameterised Constructor:Kalam
+AChild1:Parameterised Constructor:Kalam
+AChild2:Parameterised Constructor:Kalam
+AParent1:Parameterised Constructor:Yogi
+AChild1:Parameterised Constructor:Yogi
+AChild2:Parameterised Constructor:Yogi
+AChild3:Parameterised Constructor:Yogi
+
+------------------------------------------------------------------------------------------
+4..Method Overloading
+------------------------------------------------------------------------------------------
+5..Method Overriding

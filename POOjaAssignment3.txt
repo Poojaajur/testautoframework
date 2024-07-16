@@ -1,0 +1,125 @@
+1..Write A class Animal having 3 instances and 4 instance variables
+ package classclassmember;
+class Animal
+{//Write A class Animal having 3 instances and 4 
+	//instance variables
+	String Name;
+	String Colour;
+	String Type;
+	String Stayin;
+	Animal(String name,String colour,String type,String stayin)
+	{
+		Name=name;
+		Colour=colour;
+		Type=type;
+		Stayin=stayin;
+		System.out.println("NAME is:" +Name+" "+"COLOUR is:"+ Colour);
+		System.out.println("TYPE is:"+Type+" "+"Staying in:"+ Stayin);
+		
+	}
+}
+public class AnimalDemoAssignment 
+{
+	public static void main(String[] args)
+	{
+		Animal elephent=new Animal("Elephent","Black","Friendly","Forest");
+		System.out.println("*******************");
+		Animal cow=new Animal("Cow","White","Friendly","Village");
+		System.out.println("*******************");
+		Animal dog=new Animal("Dog","few com","Friendly","Anywhere");
+			
+	}
+
+}
+ output
+NAME is:Elephent COLOUR is:Black
+TYPE is:Friendly Staying in:Forest
+*******************
+NAME is:Cow COLOUR is:White
+TYPE is:Friendly Staying in:Village
+*******************
+NAME is:Dog COLOUR is:few com
+TYPE is:Friendly Staying in:Anywhere
+
+
+------------------------------------------------------------------------
+2..Write A class Flower having 2 instances and 4 instance variables
+
+package classclassmember;
+
+class Flower
+{//Write A class Flower having 2 instances and 4 
+	//instance variables
+	String Name;
+	String Colour;
+	int Price;
+	String Size;
+	Flower(String name,String colour,int price,String size)
+	{
+		Name=name;
+		Colour=colour;
+		Price=price;
+		Size=size;
+		System.out.println("NAME is:" +Name+" "+"COLOUR is:"+ Colour);
+		System.out.println("PRICE is:"+Price+" "+"SIZE in:"+ Size);
+		
+	}
+}
+public class FlowerDemoAssignment 
+{
+	public static void main(String[] args)
+	{
+		Flower Rose=new Flower("ROSE","RED",250,"SMALL");
+		System.out.println("*******************");
+		Flower Sunflower=new Flower("SUNFLOWER","Yellow",600,"BIg");
+	}
+
+}
+  output
+
+NAME is:ROSE COLOUR is:RED
+PRICE is:250 SIZE in:SMALL
+*******************
+NAME is:SUNFLOWER COLOUR is:Yellow
+PRICE is:600 SIZE in:BIg
+
+------------------------------------------------------------------------
+3..Write A class Vegetables having 1 instances and 5 instance variables
+
+package classclassmember;
+
+class Vegetable
+{//Write A class Vegetable having 1 instances and 5 
+	//instance variables
+	String Name;
+	String Colour;
+	int Price;
+	String Size;
+	String Usefor;
+	Vegetable(String name,String colour,int price,String size,String usefor)
+	{
+		Name=name;
+		Colour=colour;
+		Price=price;
+		Size=size;
+		Usefor=usefor;
+		System.out.println("NAME is:" +Name+" "+"COLOUR is:"+ Colour);
+		System.out.println("PRICE is:"+Price+" "+"SIZE in:"+ Size);
+		System.out.println("USED FOR MAKING :"+Usefor);
+		
+	}
+}
+public class VegetableDemoAssignment 
+{
+	public static void main(String[] args)
+	{
+		Vegetable onion=new Vegetable("ONION","White",20,"SMALL","Breakfast and Lunch and Dinner");
+	}
+		
+}
+
+output
+
+NAME is:ONION COLOUR is:White
+PRICE is:20 SIZE in:SMALL
+USED FOR MAKING :Breakfast and Lunch and Dinner
